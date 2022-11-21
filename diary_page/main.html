@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shutter</title>
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../css/scollbar.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script>
         $(() => {
@@ -14,15 +15,24 @@
             $('.film').on('click', (e) => {
                 // console.log(e.currentTarget.attributes['data-num'].value);
                 let num = e.currentTarget.attributes['data-num'].value;
-                let flip = e.currentTarget.attributes['data-flip'].value;
-                if (flip == 0) {
-                    $(`.film[data-num=${num}]>.film-inner`).css('transform', 'rotateY(180deg)');
-                    e.currentTarget.attributes['data-flip'].value = 1;
-                } else {
-                    $(`.film[data-num=${num}]>.film-inner`).css('transform', 'rotateY(0deg)')
-                    e.currentTarget.attributes['data-flip'].value = 0;
+                let flip = e.currentTarget.attributes['data-flip'];
+                let target = e.target.attributes['class'].value;
+                if (target != 'readmore-btn') {
+                    if (flip.value == 0) {
+                        $(`.film[data-num=${num}]>.film-inner`).css('transform', 'rotateY(180deg)');
+                        flip.value = 1;
+                    } else {
+                        $(`.film[data-num=${num}]>.film-inner`).css('transform', 'rotateY(0deg)')
+                        flip.value = 0;
+                    }
                 }
                 
+            });
+
+            $('.readmore-btn').on('click', (e) => {
+                let to_diary = e.currentTarget.attributes['data-to-diary'].value;
+                // console.log(to_diary);
+                window.open(`./src/00${to_diary}/diary.html`, "_self");
             });
         });
     </script>
@@ -35,46 +45,214 @@
             </div>
             <div>Back</div>
         </div>
-        <div class="header">
-            <div>- Memory Storage -</div>
-        </div>
-        <div class="content">
-            <!-- <div id="text">
-                <div>This is diary page</div>
-                <div>Under construction</div>
-            </div> -->
-            <div class="film" data-num="1" data-flip="0">
-                <div class="film-inner">
-                    <div class="film-front">
-                        <div class="place-image">
-                            <img src="./src/001/thumbnail.jpg" alt="thumbnail001">
+        <div class="container">
+            <div class="header">
+                <div>- Memory Storage -</div>
+            </div>
+            <div class="content">
+                <!-- <div id="text">
+                    <div>This is diary page</div>
+                    <div>Under construction</div>
+                </div> -->
+                <div class="film" data-num="1" data-flip="0">
+                    <div class="film-inner">
+                        <div class="film-front">
+                            <div class="place-image">
+                                <img src="./src/001/thumbnail.jpg" alt="thumbnail001">
+                            </div>
+                            <div class="bottom">
+                                <div class="sticker">☀️</div>
+                                <div class="date">20/11/2022</div>
+                            </div>
                         </div>
-                        <div class="bottom">
-                            <div class="sticker">☀️</div>
-                            <div class="date">20/11/2022</div>
+                        <div class="film-back">
+                            <div class="diary-header">
+                                <div class="date">20/11/2022</div>
+                                <div class="head-topic">วันที่ไม่ธรรมดา</div>
+                            </div>
+                            <div class="diary-content">
+                                <div class="text">
+                                    นี่คือเนื่อเรื่องแบบย่อ ๆ ที่ย่อมาก ๆ ขอแค่ 3 บรรทัดพอนะ Ok?!
+                                </div>
+                                <div class="readmore-btn" data-to-diary="1"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="film-back">
-                        <div class="diary-header">
-                            <div class="date">20/11/2022</div>
-                            <div class="head-topic">วันที่ไม่ธรรมดา</div>
-                        </div>
-                        <div class="diary-content"></div>
                     </div>
                 </div>
-            </div>
-            <div class="film" data-num="2" data-flip="0">
-                <div class="film-inner">
-                    <div class="film-front">
-                        <div class="place-image">
-                            <img src="./src/002/thumbnail.jpg" alt="thumbnail001">
+                <div class="film" data-num="2" data-flip="0">
+                    <div class="film-inner">
+                        <div class="film-front">
+                            <div class="place-image">
+                                <img src="./src/002/thumbnail.jpg" alt="thumbnail002">
+                            </div>
+                            <div class="bottom">
+                                <div class="sticker">🤔</div>
+                                <div class="date">21/11/2022</div>
+                            </div>
                         </div>
-                        <div class="bottom">
-                            <div class="sticker">☕</div>
-                            <div class="date">19/11/2022</div>
+                        <div class="film-back">
+                            <div class="diary-header">
+                                <div class="date">21/11/2022</div>
+                                <div class="head-topic">วันที่ไม่ธรรมดา</div>
+                            </div>
+                            <div class="diary-content">
+                                <div class="text">
+                                    นี่คือเนื่อเรื่องแบบย่อ ๆ ที่ย่อมาก ๆ ขอแค่ 3 บรรทัดพอนะ Ok?!
+                                </div>
+                                <div class="readmore-btn" data-to-diary="2"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="film-back"></div>
+                </div>
+                <div class="film" data-num="3" data-flip="0">
+                    <div class="film-inner">
+                        <div class="film-front">
+                            <div class="place-image">
+                                <img src="./src/003/thumbnail.jpg" alt="thumbnail003">
+                            </div>
+                            <div class="bottom">
+                                <div class="sticker">🦾</div>
+                                <div class="date">22/11/2022</div>
+                            </div>
+                        </div>
+                        <div class="film-back">
+                            <div class="diary-header">
+                                <div class="date">22/11/2022</div>
+                                <div class="head-topic">วันที่ไม่ธรรมดา</div>
+                            </div>
+                            <div class="diary-content">
+                                <div class="text">
+                                    นี่คือเนื่อเรื่องแบบย่อ ๆ ที่ย่อมาก ๆ ขอแค่ 3 บรรทัดพอนะ Ok?!
+                                </div>
+                                <div class="readmore-btn" data-to-diary="3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="film" data-num="4" data-flip="0">
+                    <div class="film-inner">
+                        <div class="film-front">
+                            <div class="place-image">
+                                <img src="./src/004/thumbnail.jpg" alt="thumbnail003">
+                            </div>
+                            <div class="bottom">
+                                <div class="sticker">🍺</div>
+                                <div class="date">23/11/2022</div>
+                            </div>
+                        </div>
+                        <div class="film-back">
+                            <div class="diary-header">
+                                <div class="date">23/11/2022</div>
+                                <div class="head-topic">วันที่ไม่ธรรมดา</div>
+                            </div>
+                            <div class="diary-content">
+                                <div class="text">
+                                    นี่คือเนื่อเรื่องแบบย่อ ๆ ที่ย่อมาก ๆ ขอแค่ 3 บรรทัดพอนะ Ok?!
+                                </div>
+                                <div class="readmore-btn" data-to-diary="4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="film" data-num="5" data-flip="0">
+                    <div class="film-inner">
+                        <div class="film-front">
+                            <div class="place-image">
+                                <img src="./src/005/thumbnail.jpg" alt="thumbnail003">
+                            </div>
+                            <div class="bottom">
+                                <div class="sticker">🍴</div>
+                                <div class="date">24/11/2022</div>
+                            </div>
+                        </div>
+                        <div class="film-back">
+                            <div class="diary-header">
+                                <div class="date">24/11/2022</div>
+                                <div class="head-topic">วันที่ไม่ธรรมดา</div>
+                            </div>
+                            <div class="diary-content">
+                                <div class="text">
+                                    นี่คือเนื่อเรื่องแบบย่อ ๆ ที่ย่อมาก ๆ ขอแค่ 3 บรรทัดพอนะ Ok?!
+                                </div>
+                                <div class="readmore-btn" data-to-diary="5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="film" data-num="6" data-flip="0">
+                    <div class="film-inner">
+                        <div class="film-front">
+                            <div class="place-image">
+                                <img src="./src/006/thumbnail.jpg" alt="thumbnail003">
+                            </div>
+                            <div class="bottom">
+                                <div class="sticker">🕹️</div>
+                                <div class="date">25/11/2022</div>
+                            </div>
+                        </div>
+                        <div class="film-back">
+                            <div class="diary-header">
+                                <div class="date">25/11/2022</div>
+                                <div class="head-topic">วันที่ไม่ธรรมดา</div>
+                            </div>
+                            <div class="diary-content">
+                                <div class="text">
+                                    นี่คือเนื่อเรื่องแบบย่อ ๆ ที่ย่อมาก ๆ ขอแค่ 3 บรรทัดพอนะ Ok?!
+                                </div>
+                                <div class="readmore-btn" data-to-diary="6"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="film" data-num="7" data-flip="0">
+                    <div class="film-inner">
+                        <div class="film-front">
+                            <div class="place-image">
+                                <img src="./src/007/thumbnail.jpg" alt="thumbnail003">
+                            </div>
+                            <div class="bottom">
+                                <div class="sticker">🎤</div>
+                                <div class="date">26/11/2022</div>
+                            </div>
+                        </div>
+                        <div class="film-back">
+                            <div class="diary-header">
+                                <div class="date">26/11/2022</div>
+                                <div class="head-topic">วันที่ไม่ธรรมดา</div>
+                            </div>
+                            <div class="diary-content">
+                                <div class="text">
+                                    นี่คือเนื่อเรื่องแบบย่อ ๆ ที่ย่อมาก ๆ ขอแค่ 3 บรรทัดพอนะ Ok?!
+                                </div>
+                                <div class="readmore-btn" data-to-diary="7"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="film" data-num="8" data-flip="0">
+                    <div class="film-inner">
+                        <div class="film-front">
+                            <div class="place-image">
+                                <img src="./src/008/thumbnail.jpg" alt="thumbnail003">
+                            </div>
+                            <div class="bottom">
+                                <div class="sticker">😎</div>
+                                <div class="date">27/11/2022</div>
+                            </div>
+                        </div>
+                        <div class="film-back">
+                            <div class="diary-header">
+                                <div class="date">27/11/2022</div>
+                                <div class="head-topic">วันที่ไม่ธรรมดา</div>
+                            </div>
+                            <div class="diary-content">
+                                <div class="text">
+                                    นี่คือเนื่อเรื่องแบบย่อ ๆ ที่ย่อมาก ๆ ขอแค่ 3 บรรทัดพอนะ Ok?!
+                                </div>
+                                <div class="readmore-btn" data-to-diary="8"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
