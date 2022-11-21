@@ -10,6 +10,20 @@
     <script>
         $(() => {
             $('.back-btn').on('click', () => { window.location = '../' });
+
+            $('.film').on('click', (e) => {
+                // console.log(e.currentTarget.attributes['data-num'].value);
+                let num = e.currentTarget.attributes['data-num'].value;
+                let flip = e.currentTarget.attributes['data-flip'].value;
+                if (flip == 0) {
+                    $(`.film[data-num=${num}]>.film-inner`).css('transform', 'rotateY(180deg)');
+                    e.currentTarget.attributes['data-flip'].value = 1;
+                } else {
+                    $(`.film[data-num=${num}]>.film-inner`).css('transform', 'rotateY(0deg)')
+                    e.currentTarget.attributes['data-flip'].value = 0;
+                }
+                
+            });
         });
     </script>
 </head>
@@ -29,7 +43,7 @@
                 <div>This is diary page</div>
                 <div>Under construction</div>
             </div> -->
-            <div class="film">
+            <div class="film" data-num="1" data-flip="0">
                 <div class="film-inner">
                     <div class="film-front">
                         <div class="place-image">
@@ -49,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="film">
+            <div class="film" data-num="2" data-flip="0">
                 <div class="film-inner">
                     <div class="film-front">
                         <div class="place-image">
