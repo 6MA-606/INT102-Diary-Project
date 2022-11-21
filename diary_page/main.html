@@ -6,12 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shutter</title>
     <link rel="stylesheet" href="./css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(() => {
+            $('.back-btn').on('click', () => { window.location = '../' });
+        });
+    </script>
 </head>
 <body>
-    <div class="grid">
-        <!-- <div class="header">
-            <div>Memory Storage</div>
-        </div> -->
+    <!-- <div class="grid"> -->
+        <div class="back-btn">
+            <div>
+                <img src="./src/img/icon/back-btn.svg" alt="back-btn">
+            </div>
+            <div>Back</div>
+        </div>
+        <div class="header">
+            <div>- Memory Storage -</div>
+        </div>
         <div class="content">
             <!-- <div id="text">
                 <div>This is diary page</div>
@@ -24,11 +36,17 @@
                             <img src="./src/001/thumbnail.jpg" alt="thumbnail001">
                         </div>
                         <div class="bottom">
-                            <div class="sticker">🍺</div>
+                            <div class="sticker">☀️</div>
                             <div class="date">20/11/2022</div>
                         </div>
                     </div>
-                    <div class="film-back"></div>
+                    <div class="film-back">
+                        <div class="diary-header">
+                            <div class="date">20/11/2022</div>
+                            <div class="head-topic">วันที่ไม่ธรรมดา</div>
+                        </div>
+                        <div class="diary-content"></div>
+                    </div>
                 </div>
             </div>
             <div class="film">
@@ -46,6 +64,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 </body>
 </html>
