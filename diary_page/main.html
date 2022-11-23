@@ -34,16 +34,37 @@
                 // console.log(to_diary);
                 window.open(`./src/00${to_diary}/diary.html`, "_self");
             });
+
+            $('.flip-btn').on('click', (e) => {
+                let flipAll = e.currentTarget.attributes['data-flip'];
+                if (flipAll.value == 0) {
+                    $(`.film>.film-inner`).css('transform', 'rotateY(180deg)');
+                    $('.film').attr('data-flip', '1');
+                    flipAll.value = 1;
+                } else {
+                    $(`.film>.film-inner`).css('transform', 'rotateY(0deg)')
+                    $('.film').attr('data-flip', '0');
+                    flipAll.value = 0;
+                }
+            });
         });
     </script>
 </head>
 <body>
     <!-- <div class="grid"> -->
-        <div class="back-btn">
-            <div>
-                <img src="./src/img/icon/back-btn.svg" alt="back-btn">
+        <div class="btn-group">
+            <div class="back-btn">
+                <div>
+                    <img src="./src/img/icon/back-btn.svg" alt="back-btn">
+                </div>
+                <div>Back</div>
             </div>
-            <div>Back</div>
+            <div class="flip-btn" data-flip="0">
+                <div>
+                    <img src="./src/img/icon/rotate.svg" alt="rotate">
+                </div>
+                <div>Flip all</div>
+            </div>
         </div>
         <div class="container">
             <div class="header">

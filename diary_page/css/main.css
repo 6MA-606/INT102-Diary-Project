@@ -20,13 +20,19 @@ body {
     grid-template-rows: [header-start] 50px [header-end content-start] 1fr [content-end];
 } */
 
-.back-btn {
-    width: max-content;
-    height: max-content;
-    padding: 5px 15px;
+.btn-group {
     position: absolute;
     top: 2vh;
     left: 2vh;
+
+    display: flex;
+    gap: 13px;
+}
+
+.btn-group > .back-btn {
+    width: max-content;
+    height: max-content;
+    padding: 5px 15px;
 
     background-color: #efefef;
     border-radius: 50px;
@@ -42,17 +48,53 @@ body {
     transition: .25s;
 }
 
-.back-btn:hover {
+.btn-group > .back-btn:hover {
     background-color: #ff8383;
     transform: scale(1.2) rotateZ(-5deg);
 }
 
-.back-btn:active {
+.btn-group > .back-btn:active {
     background-color: #c26464;
     transform: scale(0.9) rotateZ(-5deg);
 }
 
-.back-btn > div:nth-child(2) {
+.btn-group > .back-btn > div:nth-child(2) {
+    font-family: var(--handWriting);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.btn-group > .flip-btn {
+    width: max-content;
+    height: max-content;
+    padding: 5px 15px;
+
+    background-color: #efefef;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10px;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: 1s;
+}
+
+.btn-group > .flip-btn:hover {
+    background-color: #ff8383;
+    transform: scale(1.2) rotateZ(-365deg);
+}
+
+.btn-group > .flip-btn:active {
+    background-color: #c26464;
+    transform: scale(0.9) rotateZ(-365deg);
+    transition: .25s;
+}
+
+.btn-group > .flip-btn > div:nth-child(2) {
     font-family: var(--handWriting);
     font-weight: bold;
     font-size: 1.5em;
