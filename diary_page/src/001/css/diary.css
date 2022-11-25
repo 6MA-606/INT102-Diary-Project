@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat&family=Sriracha&display=swap");
+@import url("./sidemenu.css");
+@import url("./film.css");
+@import url("./topmenu.css");
+@import url("./exit-btn.css");
 
 :root {
-    --filmSize: 21vmax;
+    --filmSize: 300px;
     /*? ขนาดของแต่ละ film*/
     --handWriting: "Caveat", "Sriracha", cursive;
 }
@@ -20,23 +24,24 @@ body {
 
 .container {
     width: 100%;
-    height: 96%;
+    height: 100%;
     /* border: 1px dashed red;
     box-sizing: border-box; */
 
     display: flex;
     justify-content: center;
+    align-items: flex-end;
 }
 
 .content {
-    width: 725px;
+    width: min(90%, 725px);
+    height: 95%;
     /* background-color: red; */
 
     display: flex;
     align-items: stretch;
     justify-content: flex-start;
-    flex-direction: column;
-    gap: 16px;
+    /* gap: 16px; */
 }
 
 .content>.paper {
@@ -47,14 +52,14 @@ body {
     background-color: #ede7c4;
 
     display: grid;
-    grid-template-columns: 60px 55% 1fr;
-    grid-template-rows: 80px 36% 1fr;
+    grid-template-columns: 60px 55%;
+    grid-template-rows: 80px 36%;
     animation: fade-in 2s 1 forwards;
 }
 
-.content>.paper>* {
+/* .content>.paper>* {
     border: 1px solid red;
-}
+} */
 
 @keyframes fade-in {
     from {
@@ -63,53 +68,6 @@ body {
 
     to {
         transform: translateY(0%);
-    }
-}
-
-.content>.sidemenu {
-    width: 12%;
-    height: 40%;
-    position: absolute;
-    background-color: #e0e0e0;
-    border-radius: 20px;
-
-    opacity: 0%;
-    /* z-index: 0; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: slide-left 2s 2s 1 forwards;
-}
-
-.content>.sidemenu>.box {
-    width: 86%;
-    height: 90%;
-}
-
-.content>.sidemenu>.box>.item {
-    margin-bottom: 8px;
-}
-
-.content>.sidemenu>.box>.item>.label {
-    font-family: var(--handWriting);
-    font-weight: bold;
-    color: #999;
-}
-
-.content>.sidemenu>.box>.item>.text {
-    font-family: var(--handWriting);
-    color: #252525;
-}
-
-@keyframes slide-left {
-    from {
-        opacity: 100%;
-        transform: translateX(0%);
-    }
-
-    to {
-        opacity: 100%;
-        transform: translateX(-110%);
     }
 }
 
@@ -135,214 +93,29 @@ body {
     grid-area: 2 / 2 / 4 / 4;
 }
 
-.content>.paper>.item4 {
-    grid-area: 1 / 3 / 3 / 4;
-}
-
-.paper>.film-place>.film {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    transform: rotate(-3deg) translateY(-10px);
-    animation: film-out 2s 3s 1 forwards;
-}
-
-@keyframes film-out {
-    0% {
-        transform: rotate(-3deg) translateY(-10px);
+@media (max-width: 1180px) {
+    body {
+        overflow: overlay;
+    }
+    
+    .container>.content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
-    25% {
-        transform: rotate(0deg) scale(1.05) translateY(-10px);
+    .content > .paper {
+        animation: unset;
     }
 
-    100% {
-        transform: rotate(5deg) scale(1) translate(100%, 0px);
-    }
-}
-
-.film {
-    /* background-color: transparent; */
-    width: calc((var(--filmSize) / 100) * 76.5);
-    /*? 76.5% ของตัวตั้ง */
-    height: var(--filmSize);
-    /*? ตัวตั้ง 100% */
-    perspective: 1000px;
-
-    /* cursor: pointer; */
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: pointer;
-}
-
-.film-inner {
-    width: inherit;
-    height: inherit;
-    transform-style: preserve-3d;
-    transition: 1s;
-}
-
-.film-front,
-.film-back {
-    width: inherit;
-    height: inherit;
-    filter: drop-shadow(0px 6px 10px #2525253f);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    position: absolute;
-}
-
-.film-front {
-    background-color: #efefef;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-}
-
-.film-front>.place-image {
-    width: 86%;
-    height: 65.8%;
-    margin-top: 12%;
-    box-shadow: inset 0px 0px 5px 0px #252525c5;
-    /* background-color: green; */
-    overflow: hidden;
-}
-
-.film-front>.place-image>img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    /* filter: sepia(0.25) contrast(2) saturate(0.7) ; */
-    z-index: -1;
-}
-
-.film-front>.bottom {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.film-front>.bottom>.sticker {
-    font-size: 1.5vmax;
-    transform: scale(2.5) translate(30%, -80%) rotateZ(-15deg);
-    text-shadow: 0px 0px 1px #0008;
-}
-
-.film-front>.bottom>.date {
-    font-family: var(--handWriting);
-    font-size: 1.5vmax;
-    font-weight: bold;
-    color: #222;
-    transform: translate(-20%, -40%) rotateZ(-5deg);
-}
-
-.film-back {
-    background-color: #efefef;
-    transform: rotateY(180deg);
-
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 30% 1fr;
-
-    font-family: var(--handWriting);
-    color: #252525;
-}
-
-.film-back>.diary-header {
-    grid-area: 1 / 1 / 2 / 2;
-    /* background-color: red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    transform: rotate(-5deg);
-}
-
-.film-back>.diary-content {
-    grid-area: 2 / 1 / 3 / 2;
-    /* background-color: green; */
-}
-
-.film-back>.diary-header>.date {
-    font-weight: bold;
-    font-size: 1.5vmax;
-}
-
-.film-back>.diary-header>.head-topic {
-    font-size: 1.5vmax;
-}
-
-.film-back>.diary-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.film-back>.diary-content>.text {
-    width: 86%;
-    font-size: 1.2vmax;
-}
-
-.film-back>.diary-content>.readmore-btn::before {
-    content: "Read more...";
-    font-size: 1.5vmax;
-    color: #777;
-}
-
-.film-back>.diary-content>.readmore-btn {
-    cursor: pointer;
-    transition: 0.25s;
-}
-
-.film-back>.diary-content>.readmore-btn:hover {
-    transform: scale(1.1);
-}
-
-.film-back>.diary-content>.readmore-btn:active {
-    transform: scale(0.9);
-}
-
-.paper>.film-place>.paper-clip-all {
-    /* animation: unclip 2s 1 forwards; */
-}
-
-.paper>.film-place>.paper-clip-all>.paper-clip {
-    width: 60px;
-    position: absolute;
-    transform: rotate(-3deg) translateY(-10px);
-    animation: unclip 2s 2s 1 forwards;
-}
-
-.paper>.film-place>.paper-clip-all>.paper-clip-back {
-    z-index: 1;
-    filter: drop-shadow(0 0 2px #0005);
-}
-
-.paper>.content::-webkit-scrollbar-thumb {
-    background-color: #6403;
-}
-
-.paper>.content {
-    width: 100%;
-    overflow-y: scroll;
-    font-family: var(--handWriting);
-    font-size: 1.25em;
-}
-
-@keyframes unclip {
-    from {
-        transform: rotate(-3deg) translateY(-10px);
-        opacity: 100%;
+    .sidemenu,
+    .film,
+    .film-place>.paper-clip-all>.paper-clip
+    {
+        display: none;
     }
 
-    to {
-        transform: rotate(-3deg) translateY(-100%);
-        opacity: 0%;
+    .topmenu {
+        display: flex;
     }
 }
