@@ -115,12 +115,13 @@ body {
 }
 
 .landing-text > div:nth-child(1) {
-    font-size: 80px;
+    font-size: 7vw;
+    white-space: nowrap;
     animation: landing-text 3s 1 forwards;
 }
 
 .landing-text > div:nth-child(2) {
-    font-size: 25px;
+    font-size: 35px;
 }
 
 .landing-text > div:nth-child(2) > span{
@@ -195,4 +196,14 @@ body {
 @keyframes bg2-slide-in {
     from { transform: translateY(100%); }
     to { transform: translateY(0%); }
+}
+
+@media (max-width: 540px) {
+    .landing-text > div:nth-child(1) {
+        font-size: 9vw;
+        animation: unset;
+    }
+    .landing-text > div:nth-child(2) {
+        font-size: 5vw;
+    }
 }
