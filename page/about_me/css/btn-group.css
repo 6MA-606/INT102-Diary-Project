@@ -1,0 +1,119 @@
+.btn-group {
+    position: absolute;
+    width: 98%;
+    height: 70px;
+    /* top: 2vh;
+    left: 2vh; */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 13px; */
+}
+
+.btn-group > .left-side {
+    display: flex;
+    gap: 13px;
+}
+
+.btn-group > .left-side > .back-btn,
+.btn-group > .left-side > .flip-btn
+{
+    width: max-content;
+    height: 40px;
+    padding: 0px 15px;
+
+    background-color: #efefef;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.btn-group > .left-side > .back-btn {
+    transition: .25s;
+}
+.btn-group > .left-side > .flip-btn {
+    transition: 1s;
+}
+
+.btn-group > .left-side > .back-btn:hover {
+    background-color: #ff8383;
+    transform: scale(1.2) rotateZ(-5deg);
+}
+
+.btn-group > .left-side > .back-btn:active {
+    background-color: #c26464;
+    transform: scale(0.9) rotateZ(-5deg);
+}
+
+.btn-group > .left-side > .back-btn > div:nth-child(2) {
+    font-family: var(--handWriting);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.btn-group > .left-side > .flip-btn:hover {
+    background-color: #ff8383;
+    transform: scale(1.2) rotateZ(-365deg);
+}
+
+.btn-group > .left-side > .flip-btn:active {
+    background-color: #c26464;
+    transform: scale(0.9) rotateZ(-365deg);
+    transition: .25s;
+}
+
+.btn-group > .left-side > .flip-btn > div:nth-child(2) {
+    font-family: var(--handWriting);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.btn-group > .right-side > .about_me-btn {
+    width: max-content; /*? hover: max-content*/
+    height: 60px;
+    background-color: #efefef;
+    padding-right: 0px; /*? hover: 15px*/
+    border-radius: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px; /*? hover: 8px*/
+
+    overflow: hidden;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.btn-group > .right-side > .about_me-btn > img {
+    width: inherit;
+    height: inherit;
+    clip-path: circle();
+}
+
+.btn-group > .right-side > .about_me-btn > div:nth-child(2) {
+    font-family: var(--handWriting);
+    font-weight: bold;
+    font-size: 0em; /*? hover: 1.5em*/
+    white-space: nowrap;
+
+    transition: 1s;
+}
+
+.btn-group > .right-side > .about_me-btn:hover {
+    width: max-content;
+    padding-right: 15px;
+    gap: 8px;
+    box-shadow: 4px 4px 0px 2px darkgrey;
+}
+
+.btn-group > .right-side > .about_me-btn:hover > div:nth-child(2) {
+    font-size: 2em
+}

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Sriracha&display=swap');
+@import url('./btn-group.css');
 
 :root {
     --filmSize: 21vmax;
@@ -18,90 +19,11 @@ body {
     background-position: center center;
 }
 
-/* .grid {
-    display: grid;
-    grid-template-columns: [header-start content-start] 1fr [header-end content-end];
-    grid-template-rows: [header-start] 50px [header-end content-start] 1fr [content-end];
-} */
-
-.btn-group {
-    position: absolute;
-    top: 2vh;
-    left: 2vh;
-
-    display: flex;
-    gap: 13px;
-}
-
-.btn-group > .back-btn {
-    width: max-content;
-    height: max-content;
-    padding: 5px 15px;
-
-    background-color: #efefef;
-    border-radius: 50px;
-
+.flex-container {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: baseline;
-    gap: 10px;
-
-    cursor: pointer;
-    -webkit-user-select: none;
-    user-select: none;
-    transition: .25s;
-}
-
-.btn-group > .back-btn:hover {
-    background-color: #ff8383;
-    transform: scale(1.2) rotateZ(-5deg);
-}
-
-.btn-group > .back-btn:active {
-    background-color: #c26464;
-    transform: scale(0.9) rotateZ(-5deg);
-}
-
-.btn-group > .back-btn > div:nth-child(2) {
-    font-family: var(--handWriting);
-    font-weight: bold;
-    font-size: 1.5em;
-}
-
-.btn-group > .flip-btn {
-    width: max-content;
-    height: max-content;
-    padding: 5px 15px;
-
-    background-color: #efefef;
-    border-radius: 50px;
-
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 10px;
-
-    cursor: pointer;
-    -webkit-user-select: none;
-    user-select: none;
-    transition: 1s;
-}
-
-.btn-group > .flip-btn:hover {
-    background-color: #ff8383;
-    transform: scale(1.2) rotateZ(-365deg);
-}
-
-.btn-group > .flip-btn:active {
-    background-color: #c26464;
-    transform: scale(0.9) rotateZ(-365deg);
-    transition: .25s;
-}
-
-.btn-group > .flip-btn > div:nth-child(2) {
-    font-family: var(--handWriting);
-    font-weight: bold;
-    font-size: 1.5em;
 }
 
 .container {
@@ -114,13 +36,10 @@ body {
 .header {
     width: 100%;
     height: 25vh;
-    /* grid-area: header; */
-    /* position: absolute; */
+    
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* margin: 5vh 0; */
 }
 
 .header > div {
@@ -135,30 +54,12 @@ body {
     width: 100vw;
     height: 100vh;
 
-    /* grid-area: content; */
-
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5vw;
     flex-wrap: wrap;
 }
-
-/* #text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#text > div:nth-child(1) {
-    color: #e0e0e0;
-    font-size: 5vw;
-}
-#text > div:nth-child(2) {
-    color: #b7b7b7;
-    font-size: 2vw;
-} */
 
 .film {
     /* background-color: transparent; */

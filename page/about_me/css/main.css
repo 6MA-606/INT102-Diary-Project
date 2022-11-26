@@ -1,0 +1,35 @@
+@import url("../../../css/scollbar.css");
+@import url('./btn-group.css');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Sriracha&display=swap');
+
+:root {
+    --handWriting: 'Caveat', 'Sriracha', cursive;
+}
+
+body {
+    margin: 0;
+    overflow: overlay;
+
+    background-color: #252525;
+}
+
+.flex-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container > .header {
+    font-family: var(--handWriting);
+    font-size: 90px;
+    color: #efefef;
+    transform: rotateZ(-3deg);
+}
