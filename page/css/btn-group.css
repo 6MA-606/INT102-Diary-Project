@@ -117,3 +117,14 @@
 .btn-group > .right-side > .about_me-btn:hover > div:nth-child(2) {
     font-size: 2em
 }
+
+@media (max-width: 1000px) {
+    .btn-group > .right-side > .about_me-btn:hover > div:nth-child(2) {
+        display: none;
+    }
+    .btn-group > .right-side > .about_me-btn:hover {
+        padding-right: 0px;
+        gap: 0px;
+        box-shadow: unset;
+    }
+}

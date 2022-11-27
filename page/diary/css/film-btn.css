@@ -50,6 +50,7 @@
     opacity: 0%;
     
     transition: .5s;
+    z-index: 5;
     /* transform: rotate(-3deg) translateY(-10px); */
 }
 

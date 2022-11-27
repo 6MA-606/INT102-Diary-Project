@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shutter</title>
+    <link rel="stylesheet" href="../css/diary.css">
+    <link rel="stylesheet" href="../../../css/scollbar.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        $(() => {
+            let diary = {
+                id: 1,
+                date: "24/11/2022",
+                sticker: "☔",
+                head_topic: "Abnormal Day",
+                text: "วันที่เหมือนจะธรรมดาแต่ไม่ธรรมดา",
+                detail: 'เช้าวันพฤหัสที่ดูเหมือนจะปกติธรรมดา☀️<br><br>เช้า - เช้ามาก็มีเรื่องเลยเพราะว่าโทรศัพท์ของผมดันมีปัญหาก็คือ "อ่านไม่เจอซิมการ์ด" มันเป็นปัญหายังไงน่ะหรอ "ผมจะใช้อินเทอร์เน็ตไม่ได้ยังไงล่ะ" วิธีแก้ก็คือผมจะต้องใช้เข็มจิ้มซิมในการดึงถาดซิมออกมา และแน่นอนว่าผมไม่มีของแบบนั้น ยัง ยังครับ ยังก่อน ปัญหามันยังไม่หมดแค่นี้ เช้าวันนี้ผมต้องเรียนเทนนิสแต่ผมไม่มีถุงเท้าใส่แล้ว! เพราะที่ตากไว้ก็ดันไม่แห้ง เอาล่ะ! มาวางแผนกันหน่อยดีกว่า<br><br>เริ่มมาเลยถ้าโทรศัพท์ผมไม่มีอินเทอร์เน็ต ผมจะกดเงินไม่ได้ ตอนนี้ผมมีเงินสดติดตัวประมาณหนึ่งร้อยบาท งั้นแผนก็คือ ผมจะนั่งวินจากหอไปลงหน้าปากซอยใช้เงิน 10 บาท จากนั้นก็ไปตลาด 61 ซื้อถุงเท้าสองคู่ 20 บาท เสร็จแล้วก็ไปขึ้นวินที่ตลาดเพื่อไปหน้ามอ 20 บาท พอถึงมอแล้วก็ไป Bookstore ไปซื้อคลิปหนีบกระดาษหนึ่งกล่องราคา 8 บาท เอาคลิปหนีบกระดาษหนึ่งอันออกมายืดให้ยาวเพื่อใช้เป็นเข็มจิ้มซิม "เรียบร้อยแก้ได้แล้ว" ในเมื่อใช้อินเตอร์เน็ตได้แล้วต่อไปก็ไปกดเงินแล้วไปกินข้าวที่หอหญิงก่อนที่จะไปเรียนเทนนิส - จบช่วงเช้า<br><br>' + 'หลังเที่ยง - ' + /* 'คาบเรียน Programming Fundamental ในวันนี้ ผมคิดมาเป็นอย่างดีแล้วว่าวันนี้ผมจะเว้นระยะห่างจากเพื่อนคนนึง ถึงจะพูดอย่างนั้นแต่ก็แค่ก้าวเดียวเท่านั้นแหละ เพราะว่าเมื่อก่อนผมจะตัวติดกับคนๆนี้มาก ซึ่งมันอาจจะทำให้เขาอึดอัดหรือเปล่านะ ในตอนแรกผมเลือกที่จะไม่เข้าไปนั่งใกล้ๆครับผมอยากจะสังเกตว่าตอนนี้อารมณ์เขาเป็นยังไง' */'ขออนุญาตข้าม - จบช่วงหลังเที่ยง<br><br>' + 'กลางคืนก่อนกลับจากมอ - ผมเห็นเพื่อนสองคนที่ผมคิดว่าน่าจะกลับไปแล้วเดินออกมาจากมอในช่วงที่ฝนตกหนักมาก ๆ ในตอนนั้นผมกำลังจะกลับแล้วโดยที่อยู่กับเพื่อนอีกสามคนอีกฝั่งหนึ่งของถนน ด้วยความที่ผมสงสัยมากๆว่าสองคนนั้นเดินออกมาทำอะไรผมเลยบอกกับเพื่อนฟังนี้ "ว่าขอข้ามไปทักทายหน่อยนะเดี๋ยวกลับมา" ผมเดินไปหาสองคนนั้นแล้วถามว่าออกมาทำอะไรกัน (ขออนุญาตเรียกเป็นตัวย่อ A กับ B นะครับ) A บอกผมว่า B หิวข้าวแต่ลืมดูเวลาหรืออะไรสักอย่างนี่แหละ ซึ่งตอนนั้นมันน่าจะประมาณ 5 ทุ่มแล้ว ฝนก็ตกหนักด้วย A เลยเดินออกมาส่ง B ผมยืนคุยกับ A และ B อยู่สักพัก หันกลับไปเพื่อนสามคนที่รออยู่อีกฝั่งหายไปหมดเลย A เลยลองโทรหาคนนึงในสามคนนั้นก็ได้ความว่า สองคนในนั้นจะต้องขึ้นรถกระป้อ ซึ่งถ้าเกิดว่ารถมาแล้วต้องไปเลย ส่วนคนสุดท้ายนั้นก็เลือกที่จะเดินกลับไปก่อน  อ๋า~ สรุปผมถูกทิ้งสินะ//ฮา ไม่นาน A ก็ขอตัวกลับก่อน ก็เหลือผมกับ B อยู่สองคนด้วยความที่ยังไม่ได้กินข้าว แล้วก็เหงาด้วย//ฮา ก็ไปกินข้าวกับ B เลยละกัน สรุปก็กลายเป็นว่าไปกินข้าวเย็นตอนเที่ยงคืน ในช่วงหลายวันที่ผ่านมา B ดูเครียดมาก แต่ในวันนี้ B ดูสดใสเป็นพิเศษ แน่นอนว่าผมเองก็รู้สึกไม่ต่างกัน หลังจากกินเสร็จผมก็เดินไปส่ง B แล้วก็แยกย้ายกัน - เป็นอันจบเรื่องราวของไดอารี่วันที่ 24 พฤศจิกายน 2022<br><br><br><div style="text-align: right;">สิทธา มานิตยกุล - ผู้เขียน</div>'
+            }
+
+            $('.date>.text').text(diary.date);
+            $('.bottom>.date').text(diary.date);
+            $('.header>.text').text(diary.head_topic);
+            $('.short-topic>.text').text(diary.text);
+            $('.sticker').text(diary.sticker);
+            $('.item3.detail>div').html(diary.detail);
+
+            $('.exit-btn').on('click', () => {
+                window.location = "../../main.html";
+            });
+
+            $('.detail-btn').on('click', () => {
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="sidemenu">
+                <div class="box">
+                    <div class="date item">
+                        <div class="label">Date: </div>
+                        <div class="text">DD/MM/YYYY</div>
+                    </div>
+                    <div class="header item">
+                        <div class="label">Header: </div>
+                        <div class="text">error</div>
+                    </div>
+                    <div class="short-topic item">
+                        <div class="label">Short topic:</div>
+                        <div class="text">error</div>
+                    </div>
+                    <div class="exit-btn">
+                        <img src="../../src/img/icon/exit-btn.svg" alt="exit-btn">
+                    </div>
+                </div>
+            </div>
+            <div class="topmenu">
+                <div class="box">
+                    <div class="date item">
+                        <div class="label">Date: </div>
+                        <div class="text" id="date">DD/MM/YYYY</div>
+                    </div>
+                    <div class="header item">
+                        <div class="label">Header: </div>
+                        <div class="text" id="header">error</div>
+                    </div>
+                    <div class="short-topic item">
+                        <div class="label">Short topic:</div>
+                        <div class="text" id="short-content">error</div>
+                    </div>
+                    <div class="exit-btn">
+                        <img src="../../src/img/icon/exit-btn.svg" alt="exit-btn">
+                    </div>
+                    <div class="film-btn">
+                        <img src="../../src/img/icon/image.svg" alt="film-btn">
+                        <div class="film-in-hover">
+                            <div class="film-inner">
+                                <div class="film-front">
+                                    <div class="place-image">
+                                        <img src="./thumbnail.jpg" alt="thumbnail">
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="sticker">error</div>
+                                        <div class="date">DD/MM/YYYY</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="paper">
+                <div class="item1"></div>
+                <div class="item2"></div>
+                <div class="item3 detail">
+                    <div>
+                        <!-- ! Detail จะอยู่ตรงนี้ -->
+                    </div>
+                </div>
+                <div class="film-place">
+                    <div class="paper-clip-all">
+                        <img class="paper-clip-front paper-clip" src="../../src/img/paper-clip-front.svg" alt="paper-clip">
+                        <img class="paper-clip-back paper-clip" src="../../src/img/paper-clip-back.svg" alt="paper-clip">
+                    </div>
+                    <div class="film" id="film">
+                        <div class="film-inner">
+                            <div class="film-front">
+                                <div class="place-image">
+                                    <img src="./thumbnail.jpg" alt="thumbnail">
+                                </div>
+                                <div class="bottom">
+                                    <div class="sticker">error</div>
+                                    <div class="date">DD/MM/YYYY</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
