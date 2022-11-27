@@ -29,7 +29,7 @@
     margin-left: .5em;
     font-size: 1.25em;
     content: "Polaroid";
-    font-family: var(--handWriting);
+    font-family: var(--handWritingENG);
     font-weight: bold;
     color: #252525;
 }
@@ -102,51 +102,4 @@
     font-size: 22.5px;
     transform: scale(2.5) translate(30%, -80%) rotateZ(-15deg);
     text-shadow: 0px 0px 1px #0008;
-}
-
-.film-front>.bottom>.date {
-    font-family: var(--handWriting);
-    font-size: 22.5px;
-    font-weight: bold;
-    color: #222;
-    transform: translate(-20%, -40%) rotateZ(-5deg);
-}
-
-.paper>.film-place>.paper-clip-all {
-    /* animation: unclip 2s 1 forwards; */
-}
-
-.film-place>.paper-clip-all>.paper-clip {
-    width: 50px;
-    position: absolute;
-    transform: rotate(-3deg) translateY(-10px);
-    animation: unclip 2s 2s 1 forwards;
-}
-
-.film-place>.paper-clip-all>.paper-clip-back {
-    z-index: 1;
-    filter: drop-shadow(0 0 2px #0005);
-}
-
-.paper>.detail::-webkit-scrollbar-thumb {
-    background-color: #6403;
-}
-
-.paper>.detail {
-    width: 100%;
-    overflow-y: scroll;
-    font-family: var(--handWriting);
-    font-size: 1.25em;
-}
-
-@keyframes unclip {
-    from {
-        transform: rotate(-3deg) translateY(-10px);
-        opacity: 100%;
-    }
-
-    to {
-        transform: rotate(-3deg) translateY(-100%);
-        opacity: 0%;
-    }
 }

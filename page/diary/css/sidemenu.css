@@ -23,13 +23,15 @@
 }
 
 .sidemenu>.box>.item>.label {
-    font-family: var(--handWriting);
+    font-family: var(--handWritingTH);
     font-weight: bold;
+    font-size: 1.05em;
     color: #999;
 }
 
 .sidemenu>.box>.item>.text {
-    font-family: var(--handWriting);
+    font-family: var(--handWritingTH);
+    font-size: 0.95em;
     color: #252525;
 }
 

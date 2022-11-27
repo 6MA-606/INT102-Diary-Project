@@ -23,7 +23,7 @@
     margin-left: .5em;
     content: "Exit";
     font-size: 1.25em;
-    font-family: var(--handWriting);
+    font-family: var(--handWritingENG);
     font-weight: bold;
     color: #252525;
 }

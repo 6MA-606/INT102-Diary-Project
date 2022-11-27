@@ -8,7 +8,8 @@
 :root {
     --filmSize: 300px;
     /*? ขนาดของแต่ละ film*/
-    --handWriting: "Caveat", "Sriracha", cursive;
+    --handWritingTH: "Sriracha", cursive;
+    --handWritingENG: "Caveat", cursive;
 }
 
 body {
@@ -78,12 +79,6 @@ body {
     border-bottom: 1px solid #252525;
 }
 
-.content>.paper>.item1 {
-    grid-area: 1 / 1 / 2 / 4;
-    /* background-color: red; */
-    border-bottom: 1px solid #252525;
-}
-
 .content>.paper>.item2 {
     grid-area: 1 / 1 / 4 / 2;
     /* background-color: lime; */
@@ -92,6 +87,27 @@ body {
 
 .content>.paper>.item3 {
     grid-area: 2 / 2 / 4 / 4;
+}
+
+.paper>.detail::-webkit-scrollbar-thumb {
+    background-color: #6403;
+}
+
+.paper>.detail {
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+}
+
+.paper>.detail>div {
+    width: 95%;
+    margin-top: 0.9em;
+    
+    font-family: var(--handWritingTH);
+    font-language-override: 'ENG';
+    font-size: 0.9em;
+    color: #252525;
 }
 
 @media (max-width: 1180px) {

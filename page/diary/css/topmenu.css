@@ -20,8 +20,6 @@
     gap: 10px;
 }
 
-/*! จะทำอะไรวะ! งงไปหมดละ*/
-
 .topmenu>.box>.header {
     grid-area: 2/1/3/2;
 }
@@ -31,12 +29,7 @@
 }
 
 .topmenu>.box>.date {
-    font-weight: bold;
     grid-area: 1/1/2/2;
-}
-
-.topmenu>.box>.date>div:nth-child(2) {
-    font-size: 1.25em;
 }
 
 .topmenu>.box>.exit-btn {
@@ -50,12 +43,12 @@
 }
 
 .topmenu>.box .item>.label {
-    font-family: var(--handWriting);
+    font-family: var(--handWritingTH);
     font-weight: bold;
     color: #999;
 }
 
 .topmenu>.box .item>.text {
-    font-family: var(--handWriting);
+    font-family: var(--handWritingTH);
     color: #252525;
 }

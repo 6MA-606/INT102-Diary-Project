@@ -85,15 +85,11 @@
 }
 
 .film-front>.bottom>.date {
-    font-family: var(--handWriting);
+    font-family: var(--handWritingENG);
     font-size: 22.5px;
     font-weight: bold;
     color: #222;
     transform: translate(-20%, -40%) rotateZ(-5deg);
-}
-
-.paper>.film-place>.paper-clip-all {
-    /* animation: unclip 2s 1 forwards; */
 }
 
 .film-place>.paper-clip-all>.paper-clip {
@@ -106,17 +102,6 @@
 .film-place>.paper-clip-all>.paper-clip-back {
     z-index: 1;
     filter: drop-shadow(0 0 2px #0005);
-}
-
-.paper>.detail::-webkit-scrollbar-thumb {
-    background-color: #6403;
-}
-
-.paper>.detail {
-    width: 100%;
-    overflow-y: scroll;
-    font-family: var(--handWriting);
-    font-size: 1.25em;
 }
 
 @keyframes unclip {
