@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Sriracha&display=swap');
 @import url('./btn-group.css');
+@import url('./other_css-btn.css');
+@import url('../../css/fade-zoom-out.css');
 
 :root {
     --filmSize: 21vmax;
@@ -11,7 +13,6 @@ body {
     margin: 0;
     overflow: overlay;
 
-    animation: fade-zoom-out 1.5s 1 forwards;
     background-image: url("../src/img/bg/polaroid-bg.svg");
     background-color: #252525;
     background-attachment: fixed;
@@ -207,18 +208,6 @@ body {
 /* .film:hover .film-inner {
     transform: rotateY(180deg);
 } */
-
-@keyframes fade-zoom-out {
-    from {
-        transform: scale(0.95);
-        opacity: 0%;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 100%;
-    }
-}
 
 @media (max-width: 900px) {
     .header > div {

@@ -1,0 +1,15 @@
+body {
+    animation: fade-zoom-out 1.5s 1 forwards;
+}
+
+@keyframes fade-zoom-out {
+    from {
+        transform: scale(0.95);
+        opacity: 0%;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 100%;
+    }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shutter</title>
+    <link rel="icon" href="../../../src/img/polaroid_film_icon.png">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="./../../js/btn.js"></script>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="btn-group">
+            <div class="left-side">
+                <div class="back-btn btn" data-href="../main.html" data-target="_self">
+                    <div>
+                        <img src="../src/img/icon/back-btn.svg" alt="back-btn">
+                    </div>
+                    <div>Back</div>
+                </div>
+            </div>
+            <div class="right-side">
+                <!-- ! เว้นไว้เผื่ออยากใส่ปุ่มทางขวามือ -->
+            </div>
+        </div>
+        <div class="container">
+            <div class="header">
+                <div>- Other CSS -</div>
+                <div>CSS that do not be covered in class</div>
+            </div>
+            <div class="content">
+                <div class="card">
+                    <div class="header">Transform</div>
+                    <div class="info">
+                        <div class="code">.example { transform: value }</div>
+                        <div class="description">ใช้เพื่อสร้างการเปลี่ยนแปลงให้กับ Element ยกตัวอย่าง เช่น การเลื่อนตำแหน่ง การปรับสเกล และการหมุน</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header">Clip-path</div>
+                    <div class="info">
+                        <div class="code">.example { clip-path: value }</div>
+                        <div class="description">ใช้เพื่อกำหนดการครอบตัด Element นั้น ๆ</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header">Object-fit</div>
+                    <div class="info">
+                        <div class="code">.example { object-fit: value }</div>
+                        <div class="description">ใช้เพื่อกำหนดว่าจะให้ element นั้น เติมเต็ม parent element อย่างไร (Ex. cover, contain)</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header">@keyframes</div>
+                    <div class="info">
+                        <div class="code">@keyframes indentifier {<br>&emsp;from { opacity: 0% }<br>&emsp;to { opacity: 100% }<br>}</div>
+                        <div class="description">ใช้เพื่อกำหนดคีย์เฟรมสำหรับใช้กับ CSS animation</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header">Animation</div>
+                    <div class="info">
+                        <div class="code">.test { animation: name 1s }</div>
+                        <div class="description">ใช้เพื่อ set ให้ element นั้น ๆ แสดง Animation ด้วย keyframes ที่สร้างไว้ตามรูปแบบที่ต้องการ</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="header">Filter</div>
+                    <div class="info">
+                        <div class="code">.test { filter: value }</div>
+                        <div class="description">ใช้เพื่อกำหนดฟิลเตอร์ที่จะนำมาซ้อนกับ Element นั้น ๆ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

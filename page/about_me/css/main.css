@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Sriracha&display=swap');
 @import url('./my_photo.css');
 @import url('./color.css');
+@import url('../../../css/fade-zoom-out.css');
 
 :root {
     --handWriting: 'Caveat', 'Sriracha', cursive;
@@ -12,7 +13,11 @@ body {
     margin: 0;
     overflow: overlay;
 
+    background-image: url("../../src/img/bg/polaroid-bg.svg");
     background-color: #252525;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
 }
 
 .flex-container {
