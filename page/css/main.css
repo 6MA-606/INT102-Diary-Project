@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Sriracha&display=swap');
+@import url('./btn-group.css');
+
+:root {
+    --filmSize: 21vmax;
+    /*? ขนาดของแต่ละ film*/
+    --handWriting: 'Caveat', 'Sriracha', cursive;
+}
+
+body {
+    margin: 0;
+    overflow: overlay;
+
+    animation: fade-zoom-out 1.5s 1 forwards;
+    background-image: url("../src/img/bg/polaroid-bg.svg");
+    background-color: #252525;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+
+.flex-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    height: 25vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header > div {
+    font-family: var(--handWriting);
+    font-size: 90px;
+    color: #efefef;
+    transform: rotateZ(-3deg);
+    transition: .25s;
+}
+
+.content {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    flex-wrap: wrap;
+}
+
+.film {
+    /* background-color: transparent; */
+    width: calc((var(--filmSize) / 100) * 76.5); /*? 76.5% ของตัวตั้ง */
+    height: var(--filmSize); /*? ตัวตั้ง 100% */
+    perspective: 1000px;
+
+    /* cursor: pointer; */
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.film-inner {
+    width: inherit;
+    height: inherit;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+
+.film-front,
+.film-back {
+    width: inherit;
+    height: inherit;
+    filter: drop-shadow(0px 6px 10px #2525253f);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.film-front {
+    background-color: #efefef;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.film-front>.place-image {
+    width: 86%;
+    height: 65.8%;
+    margin-top: 12%;
+    box-shadow: inset 0px 0px 5px 0px #252525c5;
+    /* background-color: green; */
+    overflow: hidden;
+}
+
+.film-front>.place-image>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    /* filter: sepia(0.25) contrast(2) saturate(0.7) ; */
+    z-index: -1;
+}
+
+.film-front>.bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.film-front>.bottom>.sticker {
+    font-size: 1.5vmax;
+    transform: scale(2.5) translate(30%, -80%) rotateZ(-15deg);
+    text-shadow: 0px 0px 1px #0008;
+}
+
+.film-front>.bottom>.date {
+    font-family: var(--handWriting);
+    font-size: 1.5vmax;
+    font-weight: bold;
+    color: #222;
+    transform: translate(-20%, -40%) rotateZ(-5deg);
+}
+
+.film-back {
+    background-color: #efefef;
+    transform: rotateY(180deg);
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% 1fr;
+
+    font-family: var(--handWriting);
+    color: #252525;
+}
+
+.film-back > .diary-header {
+    grid-area: 1 / 1 / 2 / 2;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-size: 1.5em;
+    transform: rotate(-5deg);
+}
+
+.film-back > .diary-header > .date {
+    font-weight: bold;
+    font-size: 1.5vmax;
+}
+
+.film-back > .diary-header > .head-topic {
+    font-size: 1.5vmax;
+}
+
+.film-back > .diary-content {
+    grid-area: 2 / 1 / 3 / 2;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.film-back > .diary-content > .text {
+    width: 86%;
+    /* text-align: justify; */
+    font-size: 1.2vmax;
+}
+
+.film-back > .diary-content > .readmore-btn::before {
+    content: 'Read more...';
+    font-size: 1.5vmax;
+    color: #777;
+}
+
+.film-back > .diary-content > .readmore-btn {
+    cursor: pointer;
+    transition: .25s;
+}
+
+.film-back > .diary-content > .readmore-btn:hover {
+    transform: scale(1.1);
+}
+
+.film-back > .diary-content > .readmore-btn:active {
+    transform: scale(0.9);
+}
+
+/* .film:hover .film-inner {
+    transform: rotateY(180deg);
+} */
+
+@keyframes fade-zoom-out {
+    from {
+        transform: scale(0.95);
+        opacity: 0%;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .header > div {
+        font-size: 10vw;
+    }
+}

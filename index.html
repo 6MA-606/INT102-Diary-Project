@@ -14,13 +14,15 @@
                 $('.film-area').css('animation', 'film-drop 4s 1s 1 forwards');
                 $('.landing-text').css('animation', 'drop-out 1.5s 1 forwards');
                 $('.bg2').css('animation', 'bg2-slide-in 2s 1s 1 forwards');
-                setTimeout('window.open("./diary_page/main.html", "_self")', 5000);
+                setTimeout('window.open("./page/main.html", "_self")', 5000);
             }
 
             $('#camera').on('click', () => { scene_1() });
             $('#shutter').on('click', () => { scene_1() });
+            $('.film-area').on('click', () => { window.open("/page/main.html", "_self") });
         });
     </script>
+    <script src="./js/btn.js"></script>
 </head>
 <body>
     <div class="film-area">
@@ -34,6 +36,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="repo-btn btn" data-href="https://github.com/6MA-606/INT102-Diary-Project" data-target="_blank">
+        <div><img src="./src/img/icon/github.svg" alt="github"></div>
     </div>
     <div id="container_1">
         <img id="camera" src="./src/img/camera.png" alt="Camera">

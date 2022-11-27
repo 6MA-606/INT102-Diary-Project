@@ -1,0 +1,29 @@
+.exit-btn {
+    background-color: #aeaeae;
+    border-radius: 100px;
+    -webkit-user-select: none;
+    user-select: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.exit-btn:hover {
+    background-color: #c0c0c0;
+}
+
+.exit-btn:active {
+    background-color: #ffb3b3;
+}
+
+.exit-btn::after {
+    margin-left: .5em;
+    content: "Exit";
+    font-size: 1.25em;
+    font-family: var(--handWritingENG);
+    font-weight: bold;
+    color: #252525;
+}

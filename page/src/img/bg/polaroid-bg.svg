@@ -1,0 +1,84 @@
+<svg width="2000" height="1000" viewBox="0 0 2000 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+    <style>
+        #camera {
+            animation: camera 10s infinite forwards;
+        }
+
+        @keyframes camera {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+
+        #film-front {
+            animation: film 6s infinite forwards;
+        }
+        #film-top {
+            animation: film 8s infinite forwards;
+        }
+        #film-left {
+            animation: film 10s infinite forwards;
+        }
+
+        @keyframes film {
+            0%, 100% {
+                transform: rotate(-2deg);
+            }
+            50% {
+                transform: rotate(2deg);
+            }
+        }
+    </style>
+
+    <g id="polaroid-bg" clip-path="url(#clip0_37_27)">
+        <rect width="2000" height="1000" fill="#252525" />
+        <g id="camera">
+            <path id="Polygon 1"
+                d="M1930.38 492.091L1873.67 613.733L1689.28 693.997L1561.61 652.62L1618.32 530.978L1802.71 450.713L1930.38 492.091Z"
+                fill="#444" />
+            <path id="Polygon 2"
+                d="M1887.89 523.116L1846.25 612.443L1710.84 671.385L1617.09 641L1658.73 551.673L1794.14 492.731L1887.89 523.116Z"
+                fill="#252525" />
+            <rect id="Rectangle 22" x="1399.67" y="668.962" width="132" height="111" rx="8"
+                transform="rotate(-23.5239 1399.67 668.962)" fill="#444" />
+            <rect id="Rectangle 21" x="1331.52" y="737.892" width="820" height="516" rx="40"
+                transform="rotate(-23.5239 1331.52 737.892)" fill="#444" />
+            <circle id="Ellipse 1" cx="1818.51" cy="829.185" r="162.079" transform="rotate(-23.5239 1818.51 829.185)"
+                fill="#252525" />
+            <circle id="Ellipse 2" cx="1818.41" cy="829.144" r="137" transform="rotate(-23.5239 1818.41 829.144)"
+                fill="#444" />
+            <circle id="Ellipse 5" cx="1818.92" cy="828.917" r="75.1636" transform="rotate(-23.5239 1818.92 828.917)"
+                fill="#252525" />
+            <rect id="Rectangle 7" x="1441.18" y="764.318" width="132.064" height="196.896" rx="20"
+                transform="rotate(-23.5239 1441.18 764.318)" fill="#252525" />
+        </g>
+        <g id="film-left">
+            <rect id="Rectangle 23" x="474.148" y="608.445" width="282.709" height="404.092"
+                transform="rotate(55.1974 474.148 608.445)" fill="#444" />
+            <rect id="Rectangle 24" x="461.256" y="644.653" width="237.964" height="255.101"
+                transform="rotate(55.1974 461.256 644.653)" fill="#252525" />
+        </g>
+        <g id="film-top">
+            <rect id="Rectangle 23_2" x="28.5592" y="472.883" width="282.709" height="404.092"
+                transform="rotate(16.6091 28.5592 472.883)" fill="#444" />
+            <rect id="Rectangle 24_2" x="41.0654" y="509.225" width="237.964" height="255.101"
+                transform="rotate(16.6091 41.0654 509.225)" fill="#252525" />
+        </g>
+        <g id="film-front">
+            <rect id="Rectangle 23_3" x="186.924" y="639.808" width="295.709" height="417.092"
+                transform="rotate(44.4561 186.924 639.808)" fill="#444" stroke="#252525" stroke-width="13" />
+            <rect id="Rectangle 24_3" x="181.1" y="687.683" width="236.964" height="254.101"
+                transform="rotate(44.4561 181.1 687.683)" fill="#252525" stroke="#252525" />
+        </g>
+    </g>
+    <defs>
+        <clipPath id="clip0_37_27">
+            <rect width="2000" height="1000" fill="white" />
+        </clipPath>
+    </defs>
+</svg>

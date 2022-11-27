@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shutter</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../css/scollbar.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="./../js/btn.js"></script>
+    <script>
+        $(() => {
+
+            let diary = [
+                {
+                    id: 1,
+                    date: "24/11/2022",
+                    sticker: "☔",
+                    head_topic: "Abnormal Day",
+                    text: "วันที่เหมือนจะธรรมดาแต่ไม่ธรรมดา ยังไงกันนะ",
+                },
+                {
+                    id: 2,
+                    date: "03/06/2022",
+                    sticker: "🔥",
+                    head_topic: "Redemption",
+                    text: "เหมือนได้เกิดใหม่เลย เกือบไปแล้ว ขอบคุณนะทุก ๆ คนขอบคุณจริง ๆ"
+                },
+                {
+                    id: 3,
+                    date: "11/02/2022",
+                    sticker: "👋",
+                    head_topic: "Say good bye<br>with smile face.",
+                    text: "ไม่ว่านานแค่ไหน พวกเราก็จะเป็นเพื่อนกันเสมอนะ"
+                }
+            ]
+
+            diary.forEach(diary => {
+                // let detail_new = detail;
+                // console.log(detail_new);
+                const card = (detail) => {
+                    return (
+                        `<div class="film" data-num="${detail.id}" data-flip="0">
+                            <div class="film-inner">
+                                <div class="film-front">
+                                    <div class="place-image">
+                                        <img src="./diary/00${detail.id}/thumbnail.jpg" alt="thumbnail00${detail.id}">
+                                    </div>
+                                    <div class="bottom">
+                                        <div class="sticker">${detail.sticker}</div>
+                                        <div class="date">${detail.date}</div>
+                                    </div>
+                                </div>
+                                <div class="film-back">
+                                    <div class="diary-header">
+                                        <div class="date">${detail.date}</div>
+                                        <div class="head_topic">${detail.head_topic}</div>
+                                    </div>
+                                    <div class="diary-content">
+                                        <div class="text">
+                                            ${detail.text}
+                                        </div>
+                                        <div class="readmore-btn" data-to-diary="${detail.id}"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`
+                    );
+                };
+                $('.container>.content').append(card(diary));
+            });
+
+            $('.back-btn').on('click', () => { window.location = '../' });
+
+            $('.film').on('click', (e) => {
+                // console.log(e.currentTarget.attributes['data-num'].value);
+                let num = e.currentTarget.attributes['data-num'].value;
+                let flip = e.currentTarget.attributes['data-flip'];
+                let target = e.target.attributes['class'].value;
+                if (target != 'readmore-btn') {
+                    if (flip.value == 0) {
+                        $(`.film[data-num=${num}]>.film-inner`).css('transform', 'rotateY(180deg)');
+                        flip.value = 1;
+                    } else {
+                        $(`.film[data-num=${num}]>.film-inner`).css('transform', 'rotateY(0deg)')
+                        flip.value = 0;
+                    }
+                }
+                
+            });
+
+            $('.readmore-btn').on('click', (e) => {
+                let to_diary = e.currentTarget.attributes['data-to-diary'].value;
+                // console.log(to_diary);
+                window.open(`./diary/00${to_diary}/diary.html`, "_self");
+            });
+
+            $('.flip-btn').on('click', (e) => {
+                let flipAll = e.currentTarget.attributes['data-flip'];
+                if (flipAll.value == 0) {
+                    $(`.film>.film-inner`).css('transform', 'rotateY(180deg)');
+                    $('.film').attr('data-flip', '1');
+                    flipAll.value = 1;
+                } else {
+                    $(`.film>.film-inner`).css('transform', 'rotateY(0deg)')
+                    $('.film').attr('data-flip', '0');
+                    flipAll.value = 0;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="btn-group">
+            <div class="left-side">
+                <div class="back-btn">
+                    <div>
+                        <img src="./src/img/icon/back-btn.svg" alt="back-btn">
+                    </div>
+                    <div>Back</div>
+                </div>
+                <div class="flip-btn" data-flip="0">
+                    <div>
+                        <img src="./src/img/icon/rotate.svg" alt="rotate">
+                    </div>
+                    <div>Flip all</div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="about_me-btn btn" data-href="./about_me/about_me.html" data-target="_self">
+                    <img src="./src/img/me.jpg" alt="about_me-btn">
+                    <div>About me</div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="header">
+                <div>- Memory Storage -</div>
+            </div>
+            <div class="content">
+               
+            </div>
+        </div>
+    </div>
+</body>
+</html>
