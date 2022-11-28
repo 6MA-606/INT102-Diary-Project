@@ -95,8 +95,8 @@ body {
 }
 
 .code {
-    margin: 0.5em 0;
-    font-size: 0.8em;
+    margin: .5em 0;
+    font-size: .65em;
     background-color: #323232;
     color: #d3d3d3;
     display: inline;
@@ -110,6 +110,21 @@ body {
     font-size: 0.6em;
     font-family: 'Sriracha', cursive;
     text-align: center;
+}
+
+.btn {
+    filter: opacity(80%);
+    cursor: pointer;
+    transition: .25s;
+}
+
+.btn:hover {
+    filter: opacity(100%);
+    transform: scale(1.1);
+}
+
+.btn:active {
+    transform: scale(0.9);
 }
 
 @media (max-width: 950px) {

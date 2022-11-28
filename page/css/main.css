@@ -157,7 +157,7 @@ body {
     align-items: center;
     flex-direction: column;
 
-    font-size: 1.5em;
+    font-size: 2em;
     transform: rotate(-5deg);
 }
 
@@ -207,5 +207,10 @@ body {
 @media (max-width: 900px) {
     .header > div {
         font-size: 10vw;
+    }
+}
+@media (max-width: 600px) {
+    .film-back > .diary-header {
+        font-size: 1em;
     }
 }
