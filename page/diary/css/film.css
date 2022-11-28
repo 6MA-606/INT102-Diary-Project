@@ -3,16 +3,13 @@
 }
 
 .film {
-    /* background-color: transparent; */
     width: calc((var(--filmSize) / 100) * 76.5);
     /*? 76.5% ของตัวตั้ง */
     height: var(--filmSize);
     /*? ตัวตั้ง 100% */
 
-    /* cursor: pointer; */
     -webkit-user-select: none;
     user-select: none;
-    cursor: pointer;
     position: absolute;
 
     transform: rotate(-3deg) translateY(-10px);

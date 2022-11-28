@@ -2,7 +2,7 @@
 @import url('./btn-group.css');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Sriracha&display=swap');
 @import url('./my_photo.css');
-@import url('./color.css');
+@import url('../../../css/color.css');
 @import url('../../../css/fade-zoom-out.css');
 
 :root {
@@ -69,7 +69,6 @@ body {
     z-index: 1;
     font-size: 24px;
     font-family: var(--handWriting);
-    color: #040495;
     filter: drop-shadow(0px 6px 10px #2525253f);
 
     display: flex;

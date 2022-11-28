@@ -1,0 +1,31 @@
+.red-pen {
+    color: #df0000;
+}
+
+.blue-pen {
+    color: #040495;
+}
+
+.gray-pen {
+    color: #868686;
+}
+
+a.link-pen:is(:link, :visited) {
+    color: #ff0088;
+    text-decoration: none;
+}
+
+a.link-pen:hover {
+    color: #b0005e;
+    text-decoration: none;
+}
+
+a.link-pen:active {
+    color: #ff5ab2;
+    text-decoration: none;
+}
+
+.highlight-yellow {
+    background-color: #f2ff00f0;
+    padding: 0 .5em;
+}
